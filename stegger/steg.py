@@ -9,6 +9,7 @@ def convert_bin_str(message):
     return "".join(result)
     
 def adjust_sub_bin(sub_bin):    
+    # many chars of 
     if int(sub_bin, 2) <= 64:    
         sub_bin = bin(int(sub_bin, 2) + 1025)[2:]    
     return sub_bin    
