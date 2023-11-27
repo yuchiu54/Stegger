@@ -1,12 +1,12 @@
 import argparse
 
-from stegger.steg import convert_to_steg
-from stegger.decode import steg_to_message
+from stegger.encode_steg import message_to_steg
+from stegger.decode_steg import steg_to_message
 
 def main():
     args = get_parse()
     if args.messagepath:
-        convert_to_steg(args.messagepath)
+        message_to_steg(args.messagepath)
 
     if args.stegpath:
         steg_to_message(args.stegpath)

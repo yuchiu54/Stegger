@@ -26,19 +26,19 @@ def split_bin(bin_str, base=10):
         sub_bins.append(chunk)    
     return sub_bins 
 
-def gen_fake_data(length):    
+def get_fake_data(length):    
     pool = string.ascii_letters + string.digits + string.punctuation + " "
     return "".join(random.choices(pool, k=length))
 
 def gen_steg(sub_bins):
     output = []
     for b in sub_bins:
-        data = gen_fake_data(int(b, 2)) + "\n\n"
+        data = get_fake_data(int(b, 2)) + "\n\n"
         output.append(data)
     with open("output.txt", "w") as f:
         f.write("".join(output))
 
-def convert_to_steg(filepath):
+def message_to_steg(filepath):
     # append # * 5 at the end of input to be separate line for decoding
     # I choose ")" as a mark for end of script. Combination of \n and space
     # in binary will misleading algorithm to stop at wrong index.

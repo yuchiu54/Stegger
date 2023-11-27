@@ -34,7 +34,7 @@ def remove_separator(bin_str, last_char):
             bin_str = bin_str[:-1]
     return bin_str
 
-def gen_message(bins):
+def get_message(bins):
     chars = []
     for b in bins:
         char = chr(int(b,2))
@@ -46,6 +46,6 @@ def steg_to_message(filepath):
     steg = get_steg(filepath)
     bins = steg_to_bins(steg)
     bin_str = get_bin_str(bins)
-    bin_str = remove_separator(bin_str, "0101001")
+    bin_str = remove_separator(bin_str, bin(ord("#"))[2:])
     bins = split_bin_str(bin_str, 7)
-    gen_message(bins)
+    get_message(bins)
