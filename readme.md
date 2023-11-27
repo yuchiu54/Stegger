@@ -19,7 +19,7 @@
 > python main.py -e your-file.py
 
 ### convert steganography content to message
-> This line will convert stegaongraphy content into message and save it to message.txt
+> This line will convert stegaongraphy content into message and save it to message.txt\
 > python main.py -d output.txt 
 
 ## **Todo**:
