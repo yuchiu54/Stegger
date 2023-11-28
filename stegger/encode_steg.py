@@ -30,7 +30,7 @@ def get_fake_data(length):
     pool = string.ascii_letters + string.digits + string.punctuation + " "
     return "".join(random.choices(pool, k=length))
 
-def gen_steg(sub_bins):
+def get_steg(sub_bins):
     output = []
     for b in sub_bins:
         data = get_fake_data(int(b, 2)) + "\n\n"
@@ -45,4 +45,4 @@ def message_to_steg(filepath):
     f = open(filepath, "r").read()[:-1] + "#" * 5
     bin_str = convert_bin_str(f)
     sub_bins = split_bin(bin_str)
-    gen_steg(sub_bins)
+    get_steg(sub_bins)
